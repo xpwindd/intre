@@ -1,0 +1,62 @@
+:root {
+  --bg: #081412;
+  --bg-soft: #0f2220;
+  --panel: #122d2a;
+  --text: #e7fff7;
+  --muted: #9ec0b8;
+  --accent: #27d3a2;
+  --warn: #ffc857;
+  --danger: #ff6b6b;
+  --line: rgba(39, 211, 162, 0.2);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", "Trebuchet MS", sans-serif; color: var(--text); background: radial-gradient(circle at 20% 20%, rgba(39,211,162,0.16), transparent 40%), radial-gradient(circle at 80% 10%, rgba(33,151,126,0.22), transparent 35%), linear-gradient(180deg, #07110f, #081412 45%, #091917); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+.container { width: min(1120px, 92vw); margin: 0 auto; }
+.topbar { border-bottom: 1px solid var(--line); backdrop-filter: blur(6px); position: sticky; top: 0; background: rgba(8, 20, 18, 0.85); z-index: 10; }
+.topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 0; }
+.brand { font-size: 20px; font-weight: 700; letter-spacing: 0.5px; }
+.nav { display: flex; flex-wrap: wrap; gap: 12px; }
+.nav a { color: var(--muted); font-size: 14px; border: 1px solid transparent; border-radius: 999px; padding: 5px 10px; transition: color .15s ease, border-color .15s ease, background-color .15s ease, box-shadow .15s ease; }
+.nav a:hover { color: var(--text); border-color: var(--line); background: rgba(39,211,162,0.08); }
+.nav a.is-active {
+  color: #05271e;
+  font-weight: 700;
+  border-color: rgba(39,211,162,0.75);
+  background: linear-gradient(135deg, #27d3a2, #75ffe0);
+  box-shadow: 0 6px 16px rgba(39,211,162,0.25);
+}
+.main { padding: 24px 0 32px; }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(12, 1fr); }
+.card { background: linear-gradient(180deg, rgba(18,45,42,0.95), rgba(12,29,27,0.92)); border: 1px solid var(--line); border-radius: 16px; padding: 16px; box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28); }
+.hero { padding: 20px; border-radius: 18px; background: rgba(39,211,162,0.1); border: 1px solid var(--line); }
+.hero h1 { margin: 0 0 8px; font-size: 28px; }
+.muted { color: var(--muted); }
+.kpi { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 14px; }
+.kpi .item { background: rgba(8,20,18,0.44); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+.kpi .val { font-size: 22px; font-weight: 700; }
+input, select, textarea, button { width: 100%; background: #0a1b19; color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 10px 11px; font: inherit; }
+input[type="checkbox"], input[type="radio"] { width: auto; padding: 0; accent-color: var(--accent); }
+textarea { min-height: 88px; resize: vertical; }
+button, .btn { cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: linear-gradient(135deg, #1aa77f, #1ec997); border: none; color: #05271e; font-weight: 700; }
+.btn-secondary { background: #173f38; color: var(--text); border: 1px solid var(--line); }
+.checkbox-line { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 10px; border-bottom: 1px solid var(--line); text-align: left; font-size: 14px; }
+th { color: var(--muted); font-weight: 600; }
+.status { padding: 4px 8px; border-radius: 999px; font-size: 12px; }
+.status-ok { background: rgba(39,211,162,0.2); color: #6affd0; }
+.status-warn { background: rgba(255,200,87,0.2); color: #ffd777; }
+.status-danger { background: rgba(255,107,107,0.18); color: #ff9999; }
+.flash { border-radius: 12px; padding: 10px 12px; margin: 10px 0; }
+.flash-success { background: rgba(39, 211, 162, 0.15); border: 1px solid var(--line); }
+.flash-error { background: rgba(255, 107, 107, 0.14); border: 1px solid rgba(255, 107, 107, 0.4); }
+.cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cols-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.span-6 { grid-column: span 6; }
+.span-12 { grid-column: span 12; }
+.timeline { border-left: 2px solid var(--line); padding-left: 14px; }
+.timeline .entry { margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px dashed var(--line); }
+.footer { border-top: 1px solid var(--line); color: var(--muted); padding: 18px 0 30px; }
+@media (max-width: 900px) { .cols-2, .cols-3, .kpi { grid-template-columns: 1fr; } .span-6 { grid-column: span 12; } .topbar-inner { align-items: flex-start; flex-direction: column; } }
