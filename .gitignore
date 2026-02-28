@@ -1,0 +1,28 @@
+# Local OpenServer/OSPanel project settings
+.osp/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/*.log
+*.log
+
+# Dependencies
+vendor/
+node_modules/
+
+# Runtime/temp
+tmp/
+temp/
+cache/
+
+# IDE/editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
